@@ -3,7 +3,26 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+const btnForm = document.querySelector('.primary')
+const name = document.querySelector('#name')
+const email = document.querySelector('#email')
+const subject = document.querySelector('#subject')
+const message = document.querySelector('#message')
+const enviarForm = document.querySelector('form')
 
+//eventListeners()
+//function eventListeners() {
+	name.addEventListener('blur', validarFormulario)
+    email.addEventListener('blur', validarFormulario)
+    subject.addEventListener('blur', validarFormulario)
+    message.addEventListener('blur', validarFormulario)
+	
+//}
+function validarFormulario (e) {
+	if(e.target.value.length > 0) {
+		console.log(e.target)
+	}
+}
 (function($) {
 
 	var $window = $(window),
@@ -157,3 +176,4 @@
 		});
 
 })(jQuery);
+
