@@ -20,9 +20,35 @@ const enviarForm = document.querySelector('form')
 //}
 function validarFormulario (e) {
 	if(e.target.value.length > 0) {
-		console.log(e.target)
+		console.log(e.target.id)
+	} else {
+		console.log('error')
+
 	}
+	const re =
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	if(e.target.id === 'email') {
+			console.log(re.test(e.target.value))
+		if(re.test(e.target.value)) {
+			console.log('todo cabron')
+		} else {
+			console.log(' no cabron')
+		}
+	}
+	if(e.target.id === 'subject' && e.target.value.length < 3) {
+		console.log('el subject debe se almenos una palabra')
+	} 
+
 }
+function mostrarError () {
+
+
+}
+function enviarEmail() {
+	
+}
+
+
 (function($) {
 
 	var $window = $(window),
