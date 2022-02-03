@@ -9,20 +9,34 @@ const email = document.querySelector('#email')
 const subject = document.querySelector('#subject')
 const message = document.querySelector('#message')
 const enviarForm = document.querySelector('form')
+const reCaptcha = document.querySelector('#valid')
+const captchaForm = document.querySelector('.captcha')
+const captcha =new Captcha($('#canvas'),{
+		  autoRefresh:false,
+		  caseSensitive:false,
+		  clickRefresh:true,
+	});
+	
 
 //eventListeners()
 //function eventListeners() {
+	document.addEventListener('DOMContentLoaded', iniciarApp)
 	name.addEventListener('blur', validarFormulario)
     email.addEventListener('blur', validarFormulario)
     subject.addEventListener('blur', validarFormulario)
     message.addEventListener('blur', validarFormulario)
-	
+	reCaptcha.addEventListener('click', captchaValidar)
+
+	function iniciarApp() {
+		console.log('iniciando')
+		btnForm.disabled = true; 
+		//btnForm.classList.add('cursor-not-allowed', 'opacity-50')
+	}
 //}
 const mensajes = {}
 function validarFormulario (e) {
 	if(e.target.id == 'name' && e.target.value.length > 0) {
 		const error = this.parentElement.querySelector('p');
-		console.log(e.target.id,this.parentElement.querySelector('p'))
 		if(error) {
 			error.remove();
 		}
@@ -30,36 +44,54 @@ function validarFormulario (e) {
 		mostrarError.bind(this)('debes rellenar el nombre')
 	}
 	if(e.target.id == 'subject' && e.target.value.length > 0) {
-		console.log(e.target.id)
+		const error = this.parentElement.querySelector('p');
+		if(error) {
+			error.remove();
+		}
 	} else if(e.target.id == 'subject' && e.target.value.length === 0){
 		mostrarError.bind(this)('debes rellenar el subject')
 
 	}
 	if(e.target.id == 'message' && e.target.value.length > 0) {
-		console.log(e.target.id)
+		const error = this.parentElement.querySelector('p');
+		if(error) {
+			error.remove();
+		}
 	} else if(e.target.id == 'message' && e.target.value.length === 0) {
 		mostrarError.bind(this)('debes rellenar el message')
 	}
 	const re =
   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 	if(e.target.id === 'email') {
-			console.log(re.test(e.target.value))
-		if(re.test(e.target.value)) {
-			console.log('todo cabron')
-		} else {
-			console.log(' no cabron')
+		const error = this.parentElement.querySelector('p');
+		if(error) {
+			error.remove();
 		}
+		if(!re.test(e.target.value)) {
+			mostrarError.bind(this)('debes rellenar el email bien')
+		} 
 	}
 	
 
 }
+function captchaValidar() {
+	const ans = captcha.valid($('input[name="code"]').val());
+	  if(ans) {
+		console.log(this)
+		captchaForm.style.visibility = "hidden";
+		btnForm.disabled = false; 
+	  }
+}
+
+	
 function mostrarError (mensaje) {
+	if(this.nextSibling) return;
 	const mensajeError = document.createElement('p')
     mensajeError.textContent = mensaje;
 	this.parentElement.appendChild(mensajeError)
 }
-function enviarEmail() {
-	
+function enviarEmail(e) {
+	console.log('hola')
 }
 
 
