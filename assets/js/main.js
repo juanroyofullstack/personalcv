@@ -18,12 +18,27 @@ const enviarForm = document.querySelector('form')
     message.addEventListener('blur', validarFormulario)
 	
 //}
+const mensajes = {}
 function validarFormulario (e) {
-	if(e.target.value.length > 0) {
+	if(e.target.id == 'name' && e.target.value.length > 0) {
+		const error = this.parentElement.querySelector('p');
+		console.log(e.target.id,this.parentElement.querySelector('p'))
+		if(error) {
+			error.remove();
+		}
+	} else if(e.target.id == 'name' && e.target.value.length === 0) {
+		mostrarError.bind(this)('debes rellenar el nombre')
+	}
+	if(e.target.id == 'subject' && e.target.value.length > 0) {
 		console.log(e.target.id)
-	} else {
-		console.log('error')
+	} else if(e.target.id == 'subject' && e.target.value.length === 0){
+		mostrarError.bind(this)('debes rellenar el subject')
 
+	}
+	if(e.target.id == 'message' && e.target.value.length > 0) {
+		console.log(e.target.id)
+	} else if(e.target.id == 'message' && e.target.value.length === 0) {
+		mostrarError.bind(this)('debes rellenar el message')
 	}
 	const re =
   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -35,14 +50,13 @@ function validarFormulario (e) {
 			console.log(' no cabron')
 		}
 	}
-	if(e.target.id === 'subject' && e.target.value.length < 3) {
-		console.log('el subject debe se almenos una palabra')
-	} 
+	
 
 }
-function mostrarError () {
-
-
+function mostrarError (mensaje) {
+	const mensajeError = document.createElement('p')
+    mensajeError.textContent = mensaje;
+	this.parentElement.appendChild(mensajeError)
 }
 function enviarEmail() {
 	
