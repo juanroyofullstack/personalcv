@@ -6,7 +6,7 @@ const email = document.querySelector('#email')
 const subject = document.querySelector('#subject')
 const message = document.querySelector('#message')
 const enviarForm = document.querySelector('form')
-//const resetForm = document.querySelector('#reset')
+const spinner = document.querySelector('.spinner')
 const reCaptcha = document.querySelector('#valid')
 const captchaForm = document.querySelector('.captcha')
 const captcha = new Captcha($('#canvas'),{
@@ -106,16 +106,6 @@ function mostrarError (mensaje) {
     mensajeError.textContent = mensaje;
 	this.parentElement.appendChild(mensajeError)
 }
-/*function resetFormulario() {
-	Object.keys(model.state).forEach(v => model.state[v] = false)
-	console.log('model',Object.values(model.state))
-	/*Object.values(model.state).forEach(function(part, index, theArray) {
-		
-		theArray[index] = false;
-		console.log('part',part,theArray[index])
-		return theArray[index];
-	})
-}*/
 (function() {
     // https://dashboard.emailjs.com/admin/integration
     emailjs.init('user_AkrT6Y0GbahNNY8C3VXwL');
@@ -126,10 +116,31 @@ function enviarEmail(e) {
     // generate a five digit number for the contact_number variable
    // this.contact_number.value = Math.random() * 100000 | 0;
     // these IDs from the previous steps
+    spinner.style.visibility = "visible";
+    btnForm.style.visibility = "hidden";
     emailjs.sendForm('service_afkvuhz', 'template_1vkk6pa', this)
         .then(function() {
+            spinner.style.visibility = "hidden";
+            btnForm.style.visibility = "visible";
+            const message = document.createElement('p')
+            message.classList.add("mystyle");
+            message.innerHTML = 'el formulario se ha enviado correctamente';
+            document.querySelector(".actions").appendChild(message)
+            setTimeout(function() {
+                document.querySelector("p.mystyle").remove();
+            }, 4000)
             console.log('SUCCESS!');
+
         }, function(error) {
+            spinner.style.visibility = "hidden";
+            btnForm.style.visibility = "visible";
+            const message = document.createElement('p')
+            message.classList.add("mystyle");
+            message.innerHTML = 'el formulario no se ha podido enviar';
+            document.querySelector(".actions").appendChild(message)
+            setTimeout(function() {
+                document.querySelector("p.mystyle").remove();
+            }, 4000)
             console.log('FAILED...', error);
         });
 }
