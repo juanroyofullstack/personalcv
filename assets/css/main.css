@@ -59,6 +59,28 @@ header p {
     position: relative;
     margin: 0 0 1.6875em 0;
 }
+@media screen and (max-width: 600px) {
+	.headincontainer {
+		right: 0%;
+		left: 5%;
+		top: 7%;
+	  }
+	  header.major p {
+	  margin-top: 1rem;
+	  margin-bottom: 1.5rem;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.headincontainer {
+		right: 0%;
+		left: 5%;
+		top: 12%;
+	  }
+	  header.major p {
+	  margin-top: 1rem;
+	  margin-bottom: 1.5rem;
+	}
+}
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
