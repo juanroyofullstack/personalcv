@@ -24,6 +24,7 @@ const captcha = new Captcha($('#canvas'),{
     subject.addEventListener('blur', validarFormulario)
     message.addEventListener('blur', validarFormulario)
 	reCaptcha.addEventListener('click', captchaValidar)
+    enviarForm.addEventListener('submit', enviarEmail)
 	//resetForm.addEventListener('click', resetFormulario)
 	function iniciarApp() {
 		console.log(model)
@@ -115,6 +116,20 @@ function mostrarError (mensaje) {
 		return theArray[index];
 	})
 }*/
+(function() {
+    // https://dashboard.emailjs.com/admin/integration
+    emailjs.init('user_AkrT6Y0GbahNNY8C3VXwL');
+})();
 function enviarEmail(e) {
 	console.log('hola')
+    e.preventDefault();
+    // generate a five digit number for the contact_number variable
+   // this.contact_number.value = Math.random() * 100000 | 0;
+    // these IDs from the previous steps
+    emailjs.sendForm('service_afkvuhz', 'template_1vkk6pa', this)
+        .then(function() {
+            console.log('SUCCESS!');
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
 }
