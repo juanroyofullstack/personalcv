@@ -4,7 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 import * as model from './model.js';
-import View from './View.js'
+import View from './view.js'
 const btnForm = document.querySelector('.primary')
 const name = document.querySelector('#name')
 const email = document.querySelector('#email')
