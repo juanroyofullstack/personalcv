@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/juanroyofullstack/personalcv/issues"
   },
-  "homepage": "https://github.com/juanroyofullstack/personalcv#readme"
+  "homepage": "https://github.com/juanroyofullstack/personalcv#readme",
+  "dependencies": {
+    "node-mandrill": "^1.0.1"
+  }
 }
