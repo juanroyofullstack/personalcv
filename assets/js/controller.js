@@ -37,7 +37,11 @@ function validarFormulario (e) {
 	if(e.target.id == 'name' && e.target.value.length > 0) {
 		const error = this.parentElement.querySelector('p');
 		if(error) {
-			error.remove();
+			error.classList.add("removing");
+			error.style.opacity = '0';
+			setTimeout(function() {
+				error.remove();
+			}, 400);
 		}
 		//console.log(model.state, Object.values(model.state).every(item => item === true))
 		model.state.name = true;
@@ -48,7 +52,11 @@ function validarFormulario (e) {
 	if(e.target.id == 'subject' && e.target.value.length > 0) {
 		const error = this.parentElement.querySelector('p');
 		if(error) {
-			error.remove();
+			error.classList.add("removing");
+			error.style.opacity = '0';
+			setTimeout(function() {
+				error.remove();
+			}, 400);
 		}
 		model.state.subject = true;
 	} else if(e.target.id == 'subject' && e.target.value.length === 0){
@@ -58,7 +66,11 @@ function validarFormulario (e) {
 	if(e.target.id == 'message' && e.target.value.length > 0) {
 		const error = this.parentElement.querySelector('p');
 		if(error) {
-			error.remove();
+			error.classList.add("removing");
+			error.style.opacity = '0';
+			setTimeout(function() {
+				error.remove();
+			}, 400);
 		}
 		model.state.text = true;
 	} else if(e.target.id == 'message' && e.target.value.length === 0) {
@@ -70,7 +82,11 @@ function validarFormulario (e) {
 	if(e.target.id === 'email') {
 		const error = this.parentElement.querySelector('p');
 		if(error) {
-			error.remove();
+			error.classList.add("removing");
+			error.style.opacity = '0';
+			setTimeout(function() {
+				error.remove();
+			}, 400);
 		}
 		model.state.email = true;
 		if(!re.test(e.target.value)) {
@@ -85,8 +101,13 @@ function validarFormulario (e) {
 function captchaValidar() {
 	const ans = captcha.valid($('input[name="code"]').val());
 	  if(ans) {
-		captchaForm.style.visibility = "hidden";
 		model.state.captcha = true;
+		captchaForm.classList.add("removing");
+		captchaForm.style.opacity = '0';
+		setTimeout(function() {
+			captchaForm.remove();
+		}, 400);
+		
 		return stateIsTrue()
 		//btnForm.disabled = false; 
 	  }
@@ -103,6 +124,7 @@ function stateIsTrue() {
 function mostrarError (mensaje) {
 	if(this.nextSibling) return;
 	const mensajeError = document.createElement('p')
+	mensajeError.classList.add("error");
     mensajeError.textContent = mensaje;
 	this.parentElement.appendChild(mensajeError)
 }
@@ -111,11 +133,8 @@ function mostrarError (mensaje) {
     emailjs.init('user_AkrT6Y0GbahNNY8C3VXwL');
 })();
 function enviarEmail(e) {
-	console.log('hola')
     e.preventDefault();
-    // generate a five digit number for the contact_number variable
-   // this.contact_number.value = Math.random() * 100000 | 0;
-    // these IDs from the previous steps
+  
     spinner.style.visibility = "visible";
     btnForm.style.visibility = "hidden";
     emailjs.sendForm('service_afkvuhz', 'template_1vkk6pa', this)
@@ -129,6 +148,7 @@ function enviarEmail(e) {
             setTimeout(function() {
                 document.querySelector("p.mystyle").remove();
             }, 4000)
+			enviarForm.reset();
             console.log('SUCCESS!');
 
         }, function(error) {

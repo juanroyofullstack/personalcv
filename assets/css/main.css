@@ -59,6 +59,33 @@ header p {
     position: relative;
     margin: 0 0 1.6875em 0;
 }
+.error {
+	font-size: 1.2rem;
+    color: red;
+    padding: 7px;
+    margin-top: 1rem;
+    border: 1px solid red;
+    border-radius: 3px;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+#valid {
+	cursor: pointer;
+	display: inline-block;
+    font-weight: 700;
+    height: 2.75em;
+    line-height: 2.75em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+	font-family: "Lato", sans-serif;
+    font-size: 10pt;
+    border: 0;
+    border-radius: 5px;
+}
+.removing {
+	transition: all 500ms;
+}
 @media screen and (max-width: 600px) {
 	.headincontainer {
 		right: 0%;
