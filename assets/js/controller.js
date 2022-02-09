@@ -153,7 +153,9 @@ function enviarEmail(e) {
 			captchaForm.classList.remove("removing");
 			captchaForm.style.opacity = '1';
 			captchaForm.style.visibility = 'visible';
-			document.querySelector(".captcha input").reset();
+			document.getElementById("code").value = '';
+			restoreState()
+			stateIsTrue()
             console.log('SUCCESS!');
 
         }, function(error) {
@@ -169,3 +171,9 @@ function enviarEmail(e) {
             console.log('FAILED...', error);
         });
 }
+function restoreState() {
+	for (key in model.state) {
+		model.state[key] = false;
+	}
+}
+restoreState()
