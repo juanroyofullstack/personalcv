@@ -105,7 +105,7 @@ function captchaValidar() {
 		captchaForm.classList.add("removing");
 		captchaForm.style.opacity = '0';
 		setTimeout(function() {
-			captchaForm.remove();
+			captchaForm.style.visibility = 'hidden'
 		}, 400);
 		
 		return stateIsTrue()
@@ -149,6 +149,11 @@ function enviarEmail(e) {
                 document.querySelector("p.mystyle").remove();
             }, 4000)
 			enviarForm.reset();
+			captcha.refresh();
+			captchaForm.classList.remove("removing");
+			captchaForm.style.opacity = '1';
+			captchaForm.style.visibility = 'visible';
+			document.querySelector(".captcha input").reset();
             console.log('SUCCESS!');
 
         }, function(error) {
