@@ -9,7 +9,7 @@ export default class View {
      * @returns 
      */
     render(data, render = true) {
-        console.log('this._generateMarkup()',this)
+       // console.log('this._generateMarkup()',this)
         const markup = this._generateMarkup(language[data]);
 
         if(!render) return markup;

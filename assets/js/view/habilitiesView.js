@@ -8,8 +8,8 @@ class habilitiesView extends View {
       }
     _generateMarkup(data) {
         return `
-        <h3>Mis Habilidades</h3>
-        <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
+        <h3>${data.abilities.title}</h3>
+        <p>${data.abilities.text}</p>
         <ul class="feature-icons">
             <li class="icon brands fa-js">JavaScript</li>
             <li class="icon brands fa-node-js">Node Js</li>

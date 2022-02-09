@@ -3,12 +3,92 @@
         "about": {
             "title": "Sobre Mi",
             "text": "Soy un desarrollador full-stack con background en el area audiovisual. Soy una persona que trabaja muy bien en equipo y con vision resolutiva. He trabajado con diferentes tecnologias como React, Redux, HTML, CSS, Javascript entre otras tecnologías y acostumbrado a cmunicarme en Inglés de forma oral y escrita."
+        },
+        "abilities": {
+            "title": "Mis Habilidades",
+            "text": "Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet."
+        },
+        "work": {
+            "title": "Mi Experiencia Laboral",
+            "text": "A lo largo de mi experiencia laboral he trabajado en diferentes proyectos y tecnologias.",
+            "positions": [
+                {
+                    "title": "Protecmedia",
+                    "text": "Desarrollo web con el CMS Millenium Designer.",
+                    "img": "images/descarga.png"
+                },
+                {
+                    "title": "Booboo Operador Logistico",
+                    "text": "Desarrollo y mantenimiento de la plataforma con Angular, NodeJs y PostgreSql.",
+                    "img": "images/booboo.png"
+                },
+                {
+                    "title": "CodaFish",
+                    "text": "HTML, CSS, JavaScript y Wordpress.",
+                    "img": "images/codafish-logo.png"
+                }
+            ]
+        },
+        "contact": {
+            "title": "Contacto",
+            "name": "Nombre",
+            "email": "Email",
+            "subject": "Asunto",
+            "message": "Mensaje",
+            "send": "Enviar"
+        },
+        "aside": {
+            "text": "Programador Fullstack",
+            "0": "Sobre Mi",
+            "1": "Mis Habilidades",
+            "2": "Mis Logros",
+            "3": "Contacto"
         }
     },
     "EN": {
         "about": {
             "title": "About Me",
             "text": "I'm a Full-stack developer with an audiovisual background. I'm a good team player with resolution atittude. I've worked in different technologies like React, Redux, HTML, CSS, Javascript like many different other and i'm used to comunicate myself in English and Spanish spoken and writen."
+        },
+        "abilities": {
+            "title": "My Abilidades",
+            "text": "Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet."
+        },
+        "work": {
+            "title": "My Work Experience",
+            "text": "Throughout my work experience i've worked in different projects and technologies.",
+            "positions": [
+                {
+                    "title": "Protecmedia",
+                    "text": "Web development with Millenium Designer CMS.",
+                    "img": "../images/descarga.png"
+                },
+                {
+                    "title": "Booboo Operador Logistico",
+                    "text": "Development and maintainment of the platform with Angular, NodeJs and PostgreSql.",
+                    "img": "images/booboo.png"
+                },
+                {
+                    "title": "CodaFish",
+                    "text": "HTML, CSS, JavaScript and Wordpress.",
+                    "img": "images/codafish-logo.png"
+                }
+            ]
+        },
+        "contact": {
+            "title": "Contact",
+            "name": "Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message",
+            "send": "Send"
+        },
+        "aside": {
+            "text": "Fullstack Developer",
+            "0": "About Mi",
+            "1": "My Abilidades",
+            "2": "My Achievements",
+            "3": "Contact"
         }
     }
 }

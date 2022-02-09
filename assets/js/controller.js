@@ -1,6 +1,7 @@
 import * as model from './model.js';
 import aboutView from './view/aboutView.js';
 import habilitiesView from './view/habilitiesView.js'
+import workView from './view/workView.js'
 const btnForm = document.querySelector('.primary')
 const name = document.querySelector('#name')
 const email = document.querySelector('#email')
@@ -10,15 +11,16 @@ const enviarForm = document.querySelector('form')
 const spinner = document.querySelector('.spinner')
 const reCaptcha = document.querySelector('#valid')
 const captchaForm = document.querySelector('.captcha')
-const captcha = new Captcha($('#canvas'),{
+const espanol = document.getElementById('es')
+const ingles = document.getElementById('en')
+
+const captcha = new Captcha($('#canvas'), {
 		  autoRefresh:false,
 		  caseSensitive:false,
 		  clickRefresh:true,
 	});
 	
 
-//eventListeners()
-//function eventListeners() {
 	document.addEventListener('DOMContentLoaded', iniciarApp)
 	name.addEventListener('blur', validarFormulario)
     email.addEventListener('blur', validarFormulario)
@@ -26,15 +28,23 @@ const captcha = new Captcha($('#canvas'),{
     message.addEventListener('blur', validarFormulario)
 	reCaptcha.addEventListener('click', captchaValidar)
     enviarForm.addEventListener('submit', enviarEmail)
+	espanol.addEventListener('click', changeLanguage)
+	ingles.addEventListener('click', changeLanguage)
 	//resetForm.addEventListener('click', resetFormulario)
 	function iniciarApp() {
 		btnForm.disabled = true; 
 		//btnForm.classList.add('cursor-not-allowed', 'opacity-50')
 	}
-//}
-const controlLanguage = function() {
+function changeLanguage (lang) {
+	console.log('lang', this.innerText, model.language.language)
+	model.language.language = this.innerText;
+	controlLanguage()
+	return true;
+}
+function controlLanguage() {
 	aboutView.render(model.language.language);
 	habilitiesView.render(model.language.language);
+	workView.render(model.language.language);
 	return true;
   }
 const mensajes = {}
@@ -185,5 +195,6 @@ function restoreState() {
 const init = function() {
 	aboutView.addHandlerRender(controlLanguage)
 	habilitiesView.addHandlerRender(controlLanguage)
+	workView.addHandlerRender(controlLanguage)
 }
   init();
