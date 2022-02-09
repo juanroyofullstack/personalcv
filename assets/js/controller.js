@@ -172,7 +172,7 @@ function enviarEmail(e) {
         });
 }
 function restoreState() {
-	for (key in model.state) {
+	for (let key in model.state) {
 		model.state[key] = false;
 	}
 }
