@@ -3,5 +3,9 @@ export const state = {
     email: false,
     subject: false,
     text: false,
-    captcha: false
+    captcha: false,
+    
+}
+export const language = {
+    language: "ES"
 }

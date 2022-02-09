@@ -1,5 +1,6 @@
 import * as model from './model.js';
-import View from './view.js'
+import aboutView from './view/aboutView.js';
+import habilitiesView from './view/habilitiesView.js'
 const btnForm = document.querySelector('.primary')
 const name = document.querySelector('#name')
 const email = document.querySelector('#email')
@@ -27,11 +28,15 @@ const captcha = new Captcha($('#canvas'),{
     enviarForm.addEventListener('submit', enviarEmail)
 	//resetForm.addEventListener('click', resetFormulario)
 	function iniciarApp() {
-		console.log(model)
 		btnForm.disabled = true; 
 		//btnForm.classList.add('cursor-not-allowed', 'opacity-50')
 	}
 //}
+const controlLanguage = function() {
+	aboutView.render(model.language.language);
+	habilitiesView.render(model.language.language);
+	return true;
+  }
 const mensajes = {}
 function validarFormulario (e) {
 	if(e.target.id == 'name' && e.target.value.length > 0) {
@@ -177,3 +182,8 @@ function restoreState() {
 	}
 }
 
+const init = function() {
+	aboutView.addHandlerRender(controlLanguage)
+	habilitiesView.addHandlerRender(controlLanguage)
+}
+  init();

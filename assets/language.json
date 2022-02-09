@@ -1,0 +1,14 @@
+{
+    "ES": {
+        "about": {
+            "title": "Sobre Mi",
+            "text": "Soy un desarrollador full-stack con background en el area audiovisual. Soy una persona que trabaja muy bien en equipo y con vision resolutiva. He trabajado con diferentes tecnologias como React, Redux, HTML, CSS, Javascript entre otras tecnologías y acostumbrado a cmunicarme en Inglés de forma oral y escrita."
+        }
+    },
+    "EN": {
+        "about": {
+            "title": "About Me",
+            "text": "I'm a Full-stack developer with an audiovisual background. I'm a good team player with resolution atittude. I've worked in different technologies like React, Redux, HTML, CSS, Javascript like many different other and i'm used to comunicate myself in English and Spanish spoken and writen."
+        }
+    }
+}
