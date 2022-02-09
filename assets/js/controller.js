@@ -176,4 +176,4 @@ function restoreState() {
 		model.state[key] = false;
 	}
 }
-restoreState()
+
