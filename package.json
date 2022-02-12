@@ -1,0 +1,27 @@
+{
+  "name": "mycv",
+  "version": "1.0.0",
+  "description": "my cv",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanroyofullstack/personalcv.git"
+  },
+  "author": "juan royo",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.1"
+  },
+  "bugs": {
+    "url": "https://github.com/juanroyofullstack/personalcv/issues"
+  },
+  "homepage": "https://github.com/juanroyofullstack/personalcv#readme",
+  "dependencies": {
+    "@emailjs/browser": "^3.4.0",
+    "node-mandrill": "^1.0.1"
+  }
+}
