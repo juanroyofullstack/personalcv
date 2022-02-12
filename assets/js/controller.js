@@ -1,7 +1,9 @@
 import * as model from './model.js';
+import * as listener from './helper.js';
 import aboutView from './view/aboutView.js';
 import habilitiesView from './view/habilitiesView.js'
 import workView from './view/workView.js'
+import contactView from './view/contactView.js'
 const btnForm = document.querySelector('.primary')
 const name = document.querySelector('#name')
 const email = document.querySelector('#email')
@@ -22,21 +24,26 @@ const captcha = new Captcha($('#canvas'), {
 	
 
 	document.addEventListener('DOMContentLoaded', iniciarApp)
-	name.addEventListener('blur', validarFormulario)
-    email.addEventListener('blur', validarFormulario)
-    subject.addEventListener('blur', validarFormulario)
-    message.addEventListener('blur', validarFormulario)
-	reCaptcha.addEventListener('click', captchaValidar)
-    enviarForm.addEventListener('submit', enviarEmail)
-	espanol.addEventListener('click', changeLanguage)
-	ingles.addEventListener('click', changeLanguage)
+
 	//resetForm.addEventListener('click', resetFormulario)
 	function iniciarApp() {
-		btnForm.disabled = true; 
+		
+		model.render.render = true;
+		if(document.querySelector('form')){
+			name.addEventListener('blur', validarFormulario)
+			email.addEventListener('blur', validarFormulario)
+			subject.addEventListener('blur', validarFormulario)
+			message.addEventListener('blur', validarFormulario)
+			reCaptcha.addEventListener('click', captchaValidar)
+			enviarForm.addEventListener('submit', enviarEmail)
+			
+		}
 		//btnForm.classList.add('cursor-not-allowed', 'opacity-50')
 	}
++
+	espanol.addEventListener('click', changeLanguage)
+	ingles.addEventListener('click', changeLanguage)
 function changeLanguage (lang) {
-	console.log('lang', this.innerText, model.language.language)
 	model.language.language = this.innerText;
 	controlLanguage()
 	return true;
@@ -45,6 +52,9 @@ function controlLanguage() {
 	aboutView.render(model.language.language);
 	habilitiesView.render(model.language.language);
 	workView.render(model.language.language);
+	contactView.renderContact(model.language.language).then(res=> {
+		return listener.addListeners(validarFormulario,enviarEmail,captchaValidar)
+	});
 	return true;
   }
 const mensajes = {}
@@ -192,9 +202,15 @@ function restoreState() {
 	}
 }
 
-const init = function() {
+async function init() {
 	aboutView.addHandlerRender(controlLanguage)
 	habilitiesView.addHandlerRender(controlLanguage)
 	workView.addHandlerRender(controlLanguage)
+	contactView.addHandlerRender(controlLanguage)
+	listener.addListeners(validarFormulario)
 }
-  init();
+init().then(res=> {
+	window.addEventListener("load", function(event) {
+		return listener.addListeners(validarFormulario,enviarEmail,captchaValidar)
+	})
+})

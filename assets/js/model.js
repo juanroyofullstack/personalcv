@@ -9,3 +9,6 @@ export const state = {
 export const language = {
     language: "ES"
 }
+export const render = {
+    render: false
+}

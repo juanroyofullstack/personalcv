@@ -1,17 +1,25 @@
 import View from './view.js';
+import language from '../../language.json';
 
 class contactView extends View {
     
-    _parentElement = document.querySelector('#four .container');
+    _parentElement = document.querySelector('form');
+    _name = document.querySelector('#name')
     _errorMessage = 'We could not find that recipe. Please try another one!';
     _message = '';
     addHandlerRender(handler) {
         ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
       }
+    async renderContact(data) {
+        const markup = this._generateMarkup(language[data]);
+
+
+        this._clear();
+        return this._parentElement.insertAdjacentHTML('afterbegin', markup)
+    }
     _generateMarkup(data) {
         return `
         <h3>${data.contact.title}</h3>
-        <form if="form" method="post">
             <div class="row gtr-uniform">
                 <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="${data.contact.name}" /></div>
                 <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="${data.contact.email}" /></div>
@@ -27,7 +35,6 @@ class contactView extends View {
             </div>
             
 
-        </form>
         <div class="captcha">
             <canvas id="canvas"></canvas>
             <input id="code" name="code" />
