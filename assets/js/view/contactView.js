@@ -1,12 +1,32 @@
 import View from './view.js';
+const btnForm = document.querySelector('.primary')
+const name = document.querySelector('#name')
+const email = document.querySelector('#email')
+const subject = document.querySelector('#subject')
+const message = document.querySelector('#message')
+const enviarForm = document.querySelector('form')
+const spinner = document.querySelector('.spinner')
+const reCaptcha = document.querySelector('#valid')
+const captchaForm = document.querySelector('.captcha')
 
 class contactView extends View {
-    
     _parentElement = document.querySelector('#four .container');
     _errorMessage = 'We could not find that recipe. Please try another one!';
     _message = '';
     addHandlerRender(handler) {
         ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+ 
+      }
+      handlerValidation(validarFormulario, captchaValidar, enviarEmail) {
+
+         
+            document.querySelector('#name').addEventListener('blur', validarFormulario)
+            document.querySelector('#email').addEventListener('blur', validarFormulario)
+            document.querySelector('#subject').addEventListener('blur', validarFormulario)
+            document.querySelector('#message').addEventListener('blur', validarFormulario)
+            document.querySelector('#valid').addEventListener('click', captchaValidar)
+            document.querySelector('form').addEventListener('submit', enviarEmail)
+          
       }
     _generateMarkup(data) {
         return `

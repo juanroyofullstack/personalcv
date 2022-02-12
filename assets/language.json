@@ -66,7 +66,7 @@
                 {
                     "title": "Booboo Operador Logistico",
                     "text": "Development and maintainment of the platform with Angular, NodeJs and PostgreSql.",
-                    "img": "images/booboo.png"
+                    "img": "/booboo.png"
                 },
                 {
                     "title": "CodaFish",
