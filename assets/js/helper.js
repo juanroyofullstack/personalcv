@@ -5,7 +5,8 @@ export function addListeners(validarFormulario,enviarEmail,captchaValidar) {
             document.querySelector('#email').addEventListener('blur', validarFormulario),
             document.querySelector('#subject').addEventListener('blur', validarFormulario),
             document.querySelector('#message').addEventListener('blur', validarFormulario),
-            document.querySelector('form').addEventListener('submit', enviarEmail));
+            document.querySelector('form').addEventListener('submit', enviarEmail),
+            );
     
      //  })
     })

@@ -6,7 +6,7 @@
         },
         "abilities": {
             "title": "Mis Habilidades",
-            "text": "Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet."
+            "text": "Habilidades adquiridas tanto en Front-end como en Back-end a lo largo de años de estudio y practica."
         },
         "work": {
             "title": "Mi Experiencia Laboral",
@@ -15,17 +15,17 @@
                 {
                     "title": "Protecmedia",
                     "text": "Desarrollo web con el CMS Millenium Designer.",
-                    "img": "images/descarga.png"
+                    "img": "/descarga.d42a5926.png"
                 },
                 {
                     "title": "Booboo Operador Logistico",
                     "text": "Desarrollo y mantenimiento de la plataforma con Angular, NodeJs y PostgreSql.",
-                    "img": "images/booboo.png"
+                    "img": "/booboo.f1753d8f.png"
                 },
                 {
                     "title": "CodaFish",
                     "text": "HTML, CSS, JavaScript y Wordpress.",
-                    "img": "images/codafish-logo.png"
+                    "img": "/codafish-logo.08502f16.png"
                 }
             ]
         },
@@ -43,7 +43,16 @@
             "1": "Mis Habilidades",
             "2": "Mis Logros",
             "3": "Contacto"
+        },
+        "errors": {
+            "name": "Rellena bien el name",
+            "email": "Rellena bien el email",
+            "subject": "Rellena bien el subject",
+            "text": "Rellena el texto",
+            "exito": "Su mensaje se envio correctamente",
+            "error": "Su mensaje no se pundo enviar"
         }
+        
     },
     "EN": {
         "about": {
@@ -52,7 +61,7 @@
         },
         "abilities": {
             "title": "My Abilidades",
-            "text": "Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet."
+            "text": "Abilities adquired in Front-end and in Back-end thoughout years of study and practice."
         },
         "work": {
             "title": "My Work Experience",
@@ -61,17 +70,17 @@
                 {
                     "title": "Protecmedia",
                     "text": "Web development with Millenium Designer CMS.",
-                    "img": "../images/descarga.png"
+                    "img": "/descarga.d42a5926.png"
                 },
                 {
                     "title": "Booboo Operador Logistico",
                     "text": "Development and maintainment of the platform with Angular, NodeJs and PostgreSql.",
-                    "img": "images/booboo.png"
+                    "img": "/booboo.f1753d8f.png"
                 },
                 {
                     "title": "CodaFish",
                     "text": "HTML, CSS, JavaScript and Wordpress.",
-                    "img": "images/codafish-logo.png"
+                    "img": "/codafish-logo.08502f16.png"
                 }
             ]
         },
@@ -89,6 +98,14 @@
             "1": "My Abilidades",
             "2": "My Achievements",
             "3": "Contact"
+        },
+        "errors": {
+            "name": "Fill up the name",
+            "email": "Fill up the email",
+            "subject": "Fill up the subject",
+            "text": "Fill up the text",
+            "exito": "Your message was succesfully sent",
+            "error": "Your message couldnt be sent"
         }
     }
 }
