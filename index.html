@@ -23,12 +23,7 @@
 					<div class="languages"><a id="es">ES</a>|<a id="en">EN</a></div>
 				</header>
 				<nav id="nav">
-					<ul>
-						<li><a href="#first" class="active">Sobre Mi</a></li>
-						<li><a href="#two">Mis Habilidades</a></li>
-						<li><a href="#three">Mis Logros</a></li>
-						<li><a href="#four">Contacto</a></li>
-					</ul>
+					
 				</nav>
 				<footer>
 					<ul class="icons">
@@ -76,7 +71,9 @@
 						<!-- Four -->
 							<section id="four">
 								<div class="container">
-									
+									<div>
+										
+									</div>
 									<div class="captcha">
 										<canvas id="canvas"></canvas>
 										<input id="code" name="code" />
@@ -430,14 +427,110 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery-captcha.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script defer src="assets/js/jquery.min.js"></script>
+			<script defer src="assets/js/jquery-captcha.min.js"></script>
+			<script defer src="assets/js/jquery.scrollex.min.js"></script>
+			<script defer src="assets/js/jquery.scrolly.min.js"></script>
+			<script defer src="assets/js/browser.min.js"></script>
+			<script defer src="assets/js/breakpoints.min.js"></script>
+			<script defer src="assets/js/util.js"></script>
 			<script defer type="module" src="assets/js/controller.js"></script>
+			<script defer src="assets/js/main.js"></script>
+			<script id="demo" type="text/javascript">
+				(function($) {
+
+var $window = $(window),
+	$body = $('body'),
+	$header = $('#header'),
+	$titleBar = null,
+	$nav = $('#nav'),
+	$wrapper = $('#wrapper');
+
+// Header Panel.
+
+	// Nav.
+		var $nav_a = $nav.find('a');
+
+		$nav_a
+			.addClass('scrolly')
+			.on('click', function() {
+
+				var $this = $(this);
+
+				// External link? Bail.
+					if ($this.attr('href').charAt(0) != '#')
+						return;
+
+				// Deactivate all links.
+					$nav_a.removeClass('active');
+
+				// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+					$this
+						.addClass('active')
+						.addClass('active-locked');
+
+			})
+			.each(function() {
+
+				var	$this = $(this),
+					id = $this.attr('href'),
+					$section = $(id);
+
+				// No section for this link? Bail.
+					if ($section.length < 1)
+						return;
+
+				// Scrollex.
+					$section.scrollex({
+						mode: 'middle',
+						top: '5vh',
+						bottom: '5vh',
+						initialize: function() {
+
+							// Deactivate section.
+								$section.addClass('inactive');
+
+						},
+						enter: function() {
+
+							// Activate section.
+								$section.removeClass('inactive');
+
+							// No locked links? Deactivate all links and activate this section's one.
+								if ($nav_a.filter('.active-locked').length == 0) {
+
+									$nav_a.removeClass('active');
+									$this.addClass('active');
+
+								}
+
+							// Otherwise, if this section's link is the one that's locked, unlock it.
+								else if ($this.hasClass('active-locked'))
+									$this.removeClass('active-locked');
+
+						}
+					});
+
+			});
+
+
+	$("header a").on('click', function(event) {
+		if (this.hash !== "") {
+			event.preventDefault();
+			var hash = this.hash;
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			  }, 800, function(){
+		
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = hash;
+			  });
+		}
+	});
+
+})();
+
+
+			</script>
 	</body>
 </html>

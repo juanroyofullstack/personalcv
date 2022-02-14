@@ -1,16 +1,10 @@
 import View from './view.js';
-const btnForm = document.querySelector('.primary')
-const name = document.querySelector('#name')
-const email = document.querySelector('#email')
-const subject = document.querySelector('#subject')
-const message = document.querySelector('#message')
-const enviarForm = document.querySelector('form')
-const spinner = document.querySelector('.spinner')
-const reCaptcha = document.querySelector('#valid')
-const captchaForm = document.querySelector('.captcha')
+import language from '../../language.json';
 
 class contactView extends View {
-    _parentElement = document.querySelector('#four .container');
+    
+    _parentElement = document.querySelector('#four .container div');
+    _name = document.querySelector('#name')
     _errorMessage = 'We could not find that recipe. Please try another one!';
     _message = '';
     addHandlerRender(handler) {
@@ -28,6 +22,13 @@ class contactView extends View {
             document.querySelector('form').addEventListener('submit', enviarEmail)
           
       }
+    async renderContact(data) {
+        const markup = this._generateMarkup(language[data]);
+
+
+        this._clear();
+        return this._parentElement.insertAdjacentHTML('afterbegin', markup)
+    }
     _generateMarkup(data) {
         return `
         <h3>${data.contact.title}</h3>
@@ -39,20 +40,13 @@ class contactView extends View {
                 <div class="col-12"><textarea name="message" id="message" placeholder="${data.contact.message}" rows="6"></textarea></div>
                 <div class="col-12">
                     <ul class="actions">
-                        <li><input type="submit" class="primary" value="${data.contact.send}" /></li>
+                        <li><input type="submit" class="primary" value="${data.contact.send}" disabled /></li>
                         <li><div class="spinner" style="visibility: hidden;"></div></li>
                         <!--<li><input id="reset" type="reset" value="Reset Form" /></li>-->
                     </ul>
                 </div>
             </div>
-            
-
         </form>
-        <div class="captcha">
-            <canvas id="canvas"></canvas>
-            <input id="code" name="code" />
-            <button id="valid">send</button>
-        </div>
         `;
       }  
 }
