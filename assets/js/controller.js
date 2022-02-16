@@ -1,22 +1,13 @@
 'use strict'
 
 import * as model from './model.js';
-<<<<<<< HEAD
-import * as helper from './helper.js';
-
-=======
 import * as listener from './helper.js';
->>>>>>> 720c3ecb8b9333471f0cac20e70b1a1897768514
 import aboutView from './view/aboutView.js';
 import habilitiesView from './view/habilitiesView.js'
 import workView from './view/workView.js'
 import contactView from './view/contactView.js'
-<<<<<<< HEAD
-
-=======
 import asideView from './view/asideView.js'
 import language from './../language.json';
->>>>>>> 720c3ecb8b9333471f0cac20e70b1a1897768514
 const btnForm = document.querySelector('.primary')
 /*const name = document.querySelector('#name')
 const email = document.querySelector('#email')
@@ -26,6 +17,8 @@ const enviarForm = document.querySelector('form')
 const spinner = document.querySelector('.spinner')
 const reCaptcha = document.querySelector('#valid')
 const captchaForm = document.querySelector('.captcha')*/
+const reCaptcha = document.querySelector('#valid')
+const captchaForm = document.querySelector('.captcha')
 const espanol = document.getElementById('es')
 const ingles = document.getElementById('en')
 
@@ -36,22 +29,10 @@ const captcha = new Captcha($('#canvas'), {
 	});
 	
 
-<<<<<<< HEAD
-/*	name.addEventListener('blur', validarFormulario)
-    email.addEventListener('blur', validarFormulario)
-    subject.addEventListener('blur', validarFormulario)
-    message.addEventListener('blur', validarFormulario)
-	reCaptcha.addEventListener('click', captchaValidar)
-    enviarForm.addEventListener('submit', enviarEmail)*/
-	espanol.addEventListener('click', changeLanguage)
-	ingles.addEventListener('click', changeLanguage)
-
-=======
 
 	reCaptcha.addEventListener('click', captchaValidar)
 	espanol.addEventListener('click', changeLanguage)
 	ingles.addEventListener('click', changeLanguage)
->>>>>>> 720c3ecb8b9333471f0cac20e70b1a1897768514
 function changeLanguage (lang) {
 	model.language.language = this.innerText;
 	return controlLanguage() ;
@@ -60,15 +41,11 @@ function controlLanguage() {
 	aboutView.render(model.language.language);
 	habilitiesView.render(model.language.language);
 	workView.render(model.language.language);
-<<<<<<< HEAD
-	contactView.render(model.language.language);
-=======
 	asideView.render(model.language.language);
 	contactView.renderContact(model.language.language).then(res=> {
 		return listener.addListeners(validarFormulario,enviarEmail,captchaValidar)
 	});
 	return true;
->>>>>>> 720c3ecb8b9333471f0cac20e70b1a1897768514
   }
 function validarFormulario (e) {
 	if(e.target.id == 'name' && e.target.value.length > 0) {
@@ -225,28 +202,9 @@ async function init() {
 }
 init().then(res=> {
 	window.addEventListener("load", function(event) {
-	
+		document.querySelectorAll('#nav a[href^="#"]').forEach(ancla => { return ancla.classList.value = '' })
 		workView.addHandlerRender(controlLanguage)
 		return listener.addListeners(validarFormulario,enviarEmail,captchaValidar)
 	})
 })
-$("#uno").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#one").offset().top},
-        'slow');
-});
-$("#dos").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#two").offset().top},
-        'slow');
-});
-$("#tres").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#three").offset().top},
-        'slow');
-});
-$("#cuatro").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#four").offset().top},
-        'slow');
-});
+

@@ -59,11 +59,11 @@
 
 		// Nav.
 			var $nav_a = $nav.find('a');
-
+/*
 			$nav_a
 				.addClass('scrolly')
 				.on('click', function() {
-
+					console.log(this)
 					var $this = $(this);
 
 					// External link? Bail.
@@ -120,7 +120,7 @@
 							}
 						});
 
-				});
+				});*/
 
 		// Title Bar.
 			$titleBar = $(
