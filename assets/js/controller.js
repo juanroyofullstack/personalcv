@@ -45,6 +45,12 @@ function controlLanguage() {
 	contactView.renderContact(model.language.language).then(res=> {
 		return listener.addListeners(validarFormulario,enviarEmail,captchaValidar)
 	});
+	var imgElement = document.querySelector('img[alt="Protecmedia"]')
+	imgElement.src = document.querySelector('.protec').src;
+	var imgElement = document.querySelector('img[alt="Booboo Operador Logistico"]')
+	imgElement.src = document.querySelector('.booboo').src;
+	var imgElement = document.querySelector('img[alt="CodaFish"]')
+	imgElement.src = document.querySelector('.codafish').src;
 	return true;
   }
 function validarFormulario (e) {
