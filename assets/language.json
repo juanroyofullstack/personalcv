@@ -60,7 +60,7 @@
             "text": "I'm a Full-stack developer with an audiovisual background. I'm a good team player with resolution atittude. I've worked in different technologies like React, Redux, HTML, CSS, Javascript like many different other and i'm used to comunicate myself in English and Spanish spoken and writen."
         },
         "abilities": {
-            "title": "My Abilidades",
+            "title": "My Abilities",
             "text": "Abilities adquired in Front-end and in Back-end thoughout years of study and practice."
         },
         "work": {
@@ -94,8 +94,8 @@
         },
         "aside": {
             "text": "Fullstack Developer",
-            "0": "About Mi",
-            "1": "My Abilidades",
+            "0": "About Me",
+            "1": "My Abilities",
             "2": "My Achievements",
             "3": "Contact"
         },
