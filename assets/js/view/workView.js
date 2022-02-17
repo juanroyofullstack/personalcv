@@ -15,7 +15,7 @@ class workView extends View {
 									${data.work["positions"]
 									.map(item => {
 										return `<article>
-											<a href="#" class="image"><img src="${item.img}" alt="" loading="lazy"/></a>
+											<a href="#" class="image"><img src="${item.img}" alt="${item.title}" loading="lazy"/></a>
 											<div class="inner">
 												<h4>${item.title}</h4>
 												<p>${item.text}</p>

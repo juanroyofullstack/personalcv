@@ -204,6 +204,12 @@ init().then(res=> {
 	window.addEventListener("load", function(event) {
 		document.querySelectorAll('#nav a[href^="#"]').forEach(ancla => { return ancla.classList.value = '' })
 		workView.addHandlerRender(controlLanguage)
+		var imgElement = document.querySelector('img[alt="Protecmedia"]')
+		imgElement.src = document.querySelector('.protec').src;
+		var imgElement = document.querySelector('img[alt="Booboo Operador Logistico"]')
+		imgElement.src = document.querySelector('.booboo').src;
+		var imgElement = document.querySelector('img[alt="CodaFish"]')
+		imgElement.src = document.querySelector('.codafish').src;
 		return listener.addListeners(validarFormulario,enviarEmail,captchaValidar)
 	})
 })
