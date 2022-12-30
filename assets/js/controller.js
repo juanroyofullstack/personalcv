@@ -37,6 +37,8 @@ function controlLanguage() {
 	contactView.renderContact(model.language.language).then(res=> {
 		return listener.addListeners(validarFormulario,enviarEmail,captchaValidar)
 	});
+	var imgElement = document.querySelector('img[alt="Empathy"]')
+	imgElement.src = document.querySelector('.empathy').src;
 	var imgElement = document.querySelector('img[alt="Protecmedia"]')
 	imgElement.src = document.querySelector('.protec').src;
 	var imgElement = document.querySelector('img[alt="Booboo Operador Logistico"]')
@@ -198,6 +200,8 @@ init().then(res=> {
 	window.addEventListener("load", function(event) {
 		document.querySelectorAll('#nav a[href^="#"]').forEach(ancla => { return ancla.classList.value = '' })
 		workView.addHandlerRender(controlLanguage)
+		var imgElement = document.querySelector('img[alt="Empathyco"]')
+		imgElement.src = document.querySelector('.empathy').src;
 		var imgElement = document.querySelector('img[alt="Protecmedia"]')
 		imgElement.src = document.querySelector('.protec').src;
 		var imgElement = document.querySelector('img[alt="Booboo Operador Logistico"]')
