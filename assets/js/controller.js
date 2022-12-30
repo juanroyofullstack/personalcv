@@ -9,14 +9,6 @@ import contactView from './view/contactView.js'
 import asideView from './view/asideView.js'
 import language from './../language.json';
 const btnForm = document.querySelector('.primary')
-/*const name = document.querySelector('#name')
-const email = document.querySelector('#email')
-const subject = document.querySelector('#subject')
-const message = document.querySelector('#message')
-const enviarForm = document.querySelector('form')
-const spinner = document.querySelector('.spinner')
-const reCaptcha = document.querySelector('#valid')
-const captchaForm = document.querySelector('.captcha')*/
 const reCaptcha = document.querySelector('#valid')
 const captchaForm = document.querySelector('.captcha')
 const espanol = document.getElementById('es')
@@ -63,7 +55,6 @@ function validarFormulario (e) {
 				error.remove();
 			}, 400);
 		}
-		//console.log(model.state, Object.values(model.state).every(item => item === true))
 		model.state.name = true;
 	} else if(e.target.id == 'name' && e.target.value.length === 0) {
 		model.state.name = false;
@@ -130,13 +121,11 @@ function captchaValidar() {
 		}, 400);
 		
 		return stateIsTrue()
-		//btnForm.disabled = false; 
 	  }
 }
 function stateIsTrue() {
 	const btnForm = document.querySelector('.primary')
 	if(Object.values(model.state).every(item => item === true)) {
-		console.log(btnForm)
 		btnForm.disabled = false; 
 		return true;
 	} else {
@@ -152,7 +141,6 @@ function mostrarError (mensaje) {
 	this.parentElement.appendChild(mensajeError)
 }
 (function() {
-    // https://dashboard.emailjs.com/admin/integration
     emailjs.init('user_AkrT6Y0GbahNNY8C3VXwL');
 })();
 function enviarEmail(e) {

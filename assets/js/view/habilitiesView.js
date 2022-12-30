@@ -12,11 +12,11 @@ class habilitiesView extends View {
         <p>${data.abilities.text}</p>
         <ul class="feature-icons">
             <li class="icon brands fa-js">JavaScript</li>
-            <li class="icon brands fa-node-js">Node Js</li>
+            <li class="icon brands fa-node-js">Typescript</li>
             <li class="icon brands fa-html5">HTML</li>
-            <li class="icon solid fa-cubes">MySQL</li>
-            <li class="icon brands fa-css3-alt">CSS</li>
-            <li class="icon solid fa-database">MongoDB</li>
+            <li class="icon brands fa-sass">SCSS</li>
+            <li class="icon solid fa-microscope">Jest</li>
+            <li class="icon brands fa-react">React</li>
         </ul>
         `;
       }  

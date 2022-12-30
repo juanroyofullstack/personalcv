@@ -2,7 +2,7 @@
     "ES": {
         "about": {
             "title": "Sobre Mi",
-            "text": "Soy un desarrollador full-stack con background en el area audiovisual. Soy una persona que trabaja muy bien en equipo y con vision resolutiva. He trabajado con diferentes tecnologias como React, Redux, HTML, CSS, Javascript entre otras tecnologías y acostumbrado a cmunicarme en Inglés de forma oral y escrita."
+            "text": "Soy un desarrollador Front- End con background en el area audiovisual. Tengo gran pasión por el desarrollo, el codigo limpio y el pair programming. He trabajado con diferentes tecnologias como React, Redux, HTML, CSS, Javascript entre otras tecnologías y acostumbrado a comunicarme en Inglés de forma oral y escrita."
         },
         "abilities": {
             "title": "Mis Habilidades",
@@ -12,6 +12,11 @@
             "title": "Mi Experiencia Laboral",
             "text": "A lo largo de mi experiencia laboral he trabajado en diferentes proyectos y tecnologias.",
             "positions": [
+                {
+                    "title": "Empathy",
+                    "text": "Desarrollo Front-End con React, Redux, HTML, CSS y Typescript",
+                    "img": "/empathyco.b3a90401.png"
+                },
                 {
                     "title": "Protecmedia",
                     "text": "Desarrollo web con el CMS Millenium Designer.",
@@ -45,9 +50,9 @@
             "3": "Contacto"
         },
         "errors": {
-            "name": "Rellena bien el name",
-            "email": "Rellena bien el email",
-            "subject": "Rellena bien el subject",
+            "name": "Rellena correctamente tu nombre",
+            "email": "Rellena correctamente tu email",
+            "subject": "Rellena correctamente el subject",
             "text": "Rellena el texto",
             "exito": "Su mensaje se envio correctamente",
             "error": "Su mensaje no se pundo enviar"
@@ -57,7 +62,7 @@
     "EN": {
         "about": {
             "title": "About Me",
-            "text": "I'm a Full-stack developer with an audiovisual background. I'm a good team player with resolution atittude. I've worked in different technologies like React, Redux, HTML, CSS, Javascript like many different other and i'm used to comunicate myself in English and Spanish spoken and writen."
+            "text": "I'm a Front-End developer with an audiovisual background. I'm a good team player with resolution atittude. I've worked in different technologies like React, Redux, HTML, CSS, Javascript like many different other and i'm used to comunicate myself in English and Spanish spoken and writen."
         },
         "abilities": {
             "title": "My Abilities",
@@ -67,6 +72,11 @@
             "title": "My Work Experience",
             "text": "Throughout my work experience i've worked in different projects and technologies.",
             "positions": [
+                {
+                    "title": "Empathy",
+                    "text": "Front-End development with React, Redux, HTML, CSS and Typescript",
+                    "img": "/empathyco.b3a90401.png"
+                },
                 {
                     "title": "Protecmedia",
                     "text": "Web development with Millenium Designer CMS.",
