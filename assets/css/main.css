@@ -111,6 +111,13 @@ header p {
 		right: 0%;
 		left: 5%;
 		top: 45px;
+		width: 100%;
+	  }
+	  .titletop {
+		font-size: 3.5em;
+	  }
+	  .headincontainer p {
+		font-size: 2rem;
 	  }
 	  header.major p {
 	  margin-top: 1rem;
